@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient-start: 147, 51, 234;
+  --gradient-end: 236, 72, 153;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-purple-600 to-pink-500;
+}
+
+.gradient-border {
+  background: linear-gradient(to right, rgb(var(--gradient-start)), rgb(var(--gradient-end)));
+  padding: 1px;
+}
+
+/* Roadmap specific styles */
+.roadmap-card {
+  @apply relative p-8 bg-white rounded-xl shadow-lg border-2 border-transparent transition-all duration-300 hover:scale-[1.02];
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+  backdrop-filter: blur(10px);
+}
+
+.roadmap-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  padding: 2px;
+  background: linear-gradient(to right, rgb(var(--gradient-start)), rgb(var(--gradient-end)));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.roadmap-bullet {
+  @apply w-2 h-2 rounded-full transition-all duration-300;
+  background: linear-gradient(to right, rgb(var(--gradient-start)), rgb(var(--gradient-end)));
+}
+
+.roadmap-line {
+  @apply absolute w-1 transition-all duration-1000;
+  background: linear-gradient(180deg, 
+    rgb(var(--gradient-start)) 0%,
+    rgb(var(--gradient-end)) 100%
+  );
+}
+
+.roadmap-connector {
+  @apply absolute w-8 h-1 bg-gradient-to-r from-purple-600 to-pink-500 transition-all duration-300;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 85.7% 97.3%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 72.2% 50.6%;
+    --radius: 0.5rem;
+  }
+
+  /* Responsive text adjustments */
+  h1.hero-title {
+    @apply text-[4rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem];
+  }
+}
+
+/* Responsive container adjustments */
+.responsive-container {
+  @apply px-4 sm:px-6 lg:px-8 mx-auto;
+  max-width: min(100%, 1400px);
+}
+
+/* Button group responsiveness */
+.button-group {
+  @apply flex flex-col sm:flex-row gap-4 justify-center;
+}
+
+/* Card grid responsiveness */
+.card-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
