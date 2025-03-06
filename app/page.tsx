@@ -137,27 +137,27 @@ export default function Home() {
               description="Unified digital economy combining innovation and practicality."
             />
             <Feature
-              icon={<Layers className="w-8 h-8 gradient-border" />}
+              icon={<Layers className="w-8 h-8 text-black" />}
               title="Blockchain for Everyday"
               description="A forward-thinking approach to integrating blockchain into everyday applications"
             />
             <Feature
-              icon={<Workflow className="w-8 h-8" />}
+              icon={<Workflow className="w-8 h-8 text-black" />}
               title="Redefining Blockchain"
               description="A vision to redefine how blockchain technology impacts the world."
             />
             <Feature
-              icon={<Cpu className="w-8 h-8" />}
+              icon={<Cpu className="w-8 h-8 text-black" />}
               title="Prepaid Cards"
               description=" Enables seamless crypto-to-fiat transactions worldwide."
             />
             <Feature
-              icon={<Brain className="w-8 h-8" />}
+              icon={<Brain className="w-8 h-8 text-black" />}
               title="Blockchain Explorer"
               description="The InfiniSVM allows network capacity to handle the next billion users, and the trillions of AI agents that will serve them."
             />
             <Feature
-              icon={<Brain className="w-8 h-8" />}
+              icon={<Brain className="w-8 h-8 text-black" />}
               title="OTT Platform"
               description="Decentralized hub for on-demand entertainment content."
             />
