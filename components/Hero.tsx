@@ -45,7 +45,7 @@ const Hero = () => {
 
                         <div className="flex gap-4 items-center justify-center">
                             <Button className="gradient-bg text-white">
-                                BUY SOL →
+                                BUY QBCX →
                             </Button>
                             <Button className="bg-black text-white">
                                 Read Whitepaper →
