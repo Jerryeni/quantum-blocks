@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Diamond, Layers, Workflow, Cpu, Brain, ArrowRight, ChevronDown, Github, Twitter, Disc as Discord, Youtube, Linkedin, CheckCircle2, Lock, Circle } from "lucide-react";
+import { Diamond, Layers, Workflow, Cpu, Brain, ArrowRight, ChevronDown, Github, Twitter, Disc as Discord, Youtube, Linkedin, CheckCircle2, Lock, Circle, Send, InstagramIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -12,7 +12,7 @@ export default function Home() {
   const [activePhase, setActivePhase] = useState(1);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,9 +26,10 @@ export default function Home() {
               <NavLink href="#" label="Assets" />
               <NavLink href="#" label="Ecosystem" />
               <NavLink href="#" label="Resources" />
-              <Button className="gradient-bg text-white ml-4">
+              <NavLink href="#" label="Network" />
+              {/* <Button className="gradient-bg text-white ml-4">
                 Network
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -69,22 +70,23 @@ export default function Home() {
         </div> */}
 
         {/* Comparison Section */}
-        <div className="relative  bg-cover bg-center rounded-lg p-8 mb-20" style={{ backgroundImage: "url('/quantum5.jpg')" }}>
+        <div className="relative  bg-cover bg-center p-8 mb-20" style={{ backgroundImage: "url('/quantum5.jpg')" }}>
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
 
-          <div className="relative p-8 text-white">
+          <div className="relative md:p-8 text-white">
             <div className="pb-20">
               <div className="text-left">
                 <h2 className="text-xl md:text-2xl mb-4 text-gray-200">
                   Unprecedented blockchain throughput
                 </h2>
-                <h1 className="font-medium md:text-8xl leading-none mb-6 text-white">
-                  1,000,000+ TPS
+                <h1 className="font-medium text-4xl md:text-8xl leading-none mb-6 text-white">
+                  5000+ TPS
                 </h1>
-                <p className="text-lg md:text-xl text-gray-300 px-4 leading-relaxed">
-                  Made possible with hardware acceleration technologies like RDMA, InfiniBand, and Software-Defined Networking (SDN),
-                  together with software scaling through a multi-executor model to scale transaction processing.
+                <p className="text-lg md:text-xl text-gray-300  leading-relaxed">
+                  Quantum Blocks employs the Proof of Authority (PoA) consensus mechanism, a transformative step beyond traditional
+                  blockchain methods like Proof of Work (PoW) and Proof of Stake (PoS). By leveraging trust and accountability, PoA delivers a
+                  highly efficient, scalable, and secure platform designed for real-world applications
                 </p>
               </div>
             </div>
@@ -97,10 +99,8 @@ export default function Home() {
               <div className="flex-1 mx-0 md:mx-8 w-full md:w-auto">
                 <div className="h-3 bg-gradient-to-r from-purple-500 to-blue-500 w-[50%] rounded-full"></div>
               </div>
-              <div className="text-right w-32">1,000,000+ TX/S</div>
-              <button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-2 rounded-lg flex items-center">
-                Network <span className="ml-2">→</span>
-              </button>
+              <div className="text-left md:text-right w-32">5,000+ TX/S</div>
+              
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-between mb-8 space-y-4 md:space-y-0 opacity-50">
@@ -109,9 +109,9 @@ export default function Home() {
                 <span>Solana</span>
               </div>
               <div className="flex-1 mx-0 md:mx-8 w-full md:w-auto">
-                <div className="h-3 bg-gray-400 rounded-full w-[10%]"></div>
+                <div className="h-3 bg-gray-400 rounded-full w-[20%]"></div>
               </div>
-              <div className="text-right w-32">7,229 TX/S</div>
+              <div className="text-left md:text-right w-32">7,229 TX/S</div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 opacity-50">
@@ -120,9 +120,9 @@ export default function Home() {
                 <span>Ethereum</span>
               </div>
               <div className="flex-1 mx-0 md:mx-8 w-full md:w-auto">
-                <div className="h-3 bg-gray-400 rounded-full w-[1%]"></div>
+                <div className="h-3 bg-gray-400 rounded-full w-[5%]"></div>
               </div>
-              <div className="text-right w-32">62 TX/S</div>
+              <div className="text-left md:text-right w-32">62 TX/S</div>
             </div>
           </div>
         </div>
@@ -327,18 +327,23 @@ export default function Home() {
           <div className="text-center max-w-4xl mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Join the Quantum Blocks network community</h2>
             <p className="text-lg md:text-xl text-gray-600 mb-8 md:mb-12">
-              Security shared through the incredibly fast blockchain network to power all decentralized systems.
+            Be part of the Quantum Blocks revolution and help shape the future of blockchain technology. Together, we can make innovation accessible to everyone.
             </p>
             <div className="button-group mb-8 md:mb-12">
-              <Button className="gradient-bg text-white hover:opacity-90 w-full sm:w-auto">
-                Contribute on Github <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button className="gradient-bg text-white hover:opacity-90 w-full sm:w-auto">
+              <Link href="#" className="gradient-bg flex items-center justify-center rounded-lg px-4 text-white hover:opacity-90 w-full sm:w-auto !py-2">
+                <Send className="h-4 w-4 text-blue-400" />
                 Join our team <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button className="gradient-bg text-white hover:opacity-90 w-full sm:w-auto">
-                Partner form <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </Link>
+              <Link href="#" className="gradient-bg flex items-center justify-center rounded-lg px-4 text-white hover:opacity-90 w-full sm:w-auto !py-2">
+              <Send className="h-4 w-4 text-blue-400" />
+
+                Our Community <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <Link href="#" className="gradient-bg flex items-center justify-center rounded-lg px-4 text-white hover:opacity-90 w-full sm:w-auto !py-2">
+              <InstagramIcon className="h-4 w-4 text-red-400" />
+
+                Instagram<ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </div>
             <div className="max-w-md mx-auto">
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Subscribe to all things Quantum Blocks</h3>
@@ -358,7 +363,9 @@ export default function Home() {
             <div className="col-span-1 sm:col-span-2">
               <h3 className="text-xl font-bold mb-4">Quantum Blocks</h3>
               <p className="text-gray-600 mb-6">
-                The hardware-accelerated blockchain, infinitely scaling to enable high-throughput, near-zero latency use cases.
+                Creating a dynamic and
+                interconnected virtual world where users can interact,
+                transact, and innovate.
               </p>
               <div className="flex gap-4">
                 <Link href="#" className="text-gray-600 hover:text-gray-900">
@@ -381,9 +388,8 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">ASSETS</h4>
               <ul className="space-y-2">
-                <li><Link href="#" className="text-gray-600 hover:text-gray-900">qBLK</Link></li>
                 <li><Link href="#" className="text-gray-600 hover:text-gray-900">DeFi</Link></li>
-                <li><Link href="#" className="text-gray-600 hover:text-gray-900">qUSD</Link></li>
+                <li><Link href="#" className="text-gray-600 hover:text-gray-900">USDT</Link></li>
               </ul>
             </div>
             <div>
@@ -397,7 +403,6 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">RESOURCES</h4>
               <ul className="space-y-2">
-                <li><Link href="#" className="text-gray-600 hover:text-gray-900">Quantum 101</Link></li>
                 <li><Link href="#" className="text-gray-600 hover:text-gray-900">Blog</Link></li>
                 <li><Link href="#" className="text-gray-600 hover:text-gray-900">Docs</Link></li>
               </ul>
